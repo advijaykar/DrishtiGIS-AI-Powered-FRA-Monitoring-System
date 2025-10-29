@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Noto+Sans+Telugu:wght@300;400;500;600;700&family=Noto+Sans+Oriya:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FRA Atlas DSS - Government Portal Design System inspired by Maharashtra Bhulekh */
+
+@layer base {
+  :root {
+    /* Government portal color scheme */
+    --background: 0 0% 98%;
+    --foreground: 210 12% 16%;
+
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 210 12% 16%;
+
+    /* Popover system */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 12% 16%;
+
+    /* Primary - Government Teal/Green */
+    --primary: 174 41% 32%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 174 41% 28%;
+    --primary-light: 174 35% 85%;
+
+    /* Secondary - Warm government orange */
+    --secondary: 35 85% 55%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted - Light backgrounds for forms */
+    --muted: 210 15% 96%;
+    --muted-foreground: 210 12% 55%;
+
+    /* Accent - Government blue */
+    --accent: 210 65% 45%;
+    --accent-foreground: 0 0% 98%;
+
+    /* Status colors - Government compliant */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 120 45% 40%;
+    --success-foreground: 0 0% 98%;
+    --warning: 45 90% 50%;
+    --warning-foreground: 210 12% 16%;
+
+    /* Interface elements */
+    --border: 210 15% 88%;
+    --input: 210 15% 95%;
+    --ring: 174 41% 32%;
+
+    --radius: 0.25rem;
+
+    /* Government portal specific colors */
+    --gov-teal: 174 41% 32%;
+    --gov-teal-light: 174 35% 85%;
+    --gov-orange: 35 85% 55%;
+    --gov-blue: 210 65% 45%;
+    --gov-green: 120 45% 40%;
+    
+    /* Gradients */
+    --gradient-gov-header: linear-gradient(135deg, hsl(174 41% 32%), hsl(174 45% 28%));
+    --gradient-form: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 15% 98%));
+    --gradient-map: linear-gradient(135deg, hsl(174 35% 85%), hsl(210 40% 95%));
+    
+    /* Shadows - Government style */
+    --shadow-card: 0 2px 8px -2px hsl(210 15% 0% / 0.1);
+    --shadow-form: 0 4px 12px -4px hsl(174 41% 32% / 0.15);
+    --shadow-header: 0 2px 4px hsl(174 41% 32% / 0.2);
+    
+    /* Typography - Government fonts */
+    --font-gov-primary: 'Noto Sans Devanagari', 'Inter', system-ui, sans-serif;
+    --font-gov-english: 'Inter', system-ui, sans-serif;
+    
+    /* Animations */
+    --transition-gov: all 0.2s ease-in-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Professional dark theme */
+    --background: 210 25% 8%;
+    --foreground: 210 15% 95%;
+
+    --card: 210 25% 10%;
+    --card-foreground: 210 15% 95%;
+
+    --popover: 210 25% 10%;
+    --popover-foreground: 210 15% 95%;
+
+    --primary: 120 40% 65%;
+    --primary-foreground: 210 25% 8%;
+    --primary-hover: 120 40% 70%;
+
+    --secondary: 25 30% 60%;
+    --secondary-foreground: 210 25% 8%;
+
+    --muted: 210 25% 15%;
+    --muted-foreground: 210 15% 70%;
+
+    --accent: 210 60% 75%;
+    --accent-foreground: 210 25% 8%;
+
+    --destructive: 0 70% 65%;
+    --destructive-foreground: 210 25% 8%;
+    --success: 120 45% 65%;
+    --success-foreground: 210 25% 8%;
+    --warning: 45 85% 65%;
+    --warning-foreground: 210 25% 8%;
+
+    --border: 210 25% 20%;
+    --input: 210 25% 15%;
+    --ring: 120 40% 65%;
+
+    /* Dark mode gradients */
+    --gradient-forest: linear-gradient(135deg, hsl(120 40% 25%), hsl(120 30% 35%));
+    --gradient-earth: linear-gradient(135deg, hsl(25 30% 35%), hsl(25 20% 45%));
+    --gradient-sky: linear-gradient(180deg, hsl(210 25% 12%), hsl(210 20% 15%));
+    --gradient-hero: linear-gradient(135deg, hsl(120 40% 25%), hsl(210 50% 35%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', 'Noto Sans Devanagari', 'Noto Sans Bengali', 'Noto Sans Telugu', 'Noto Sans Oriya', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Map container styles */
+  .leaflet-container {
+    background: hsl(var(--muted));
+    font-family: inherit;
+  }
+  
+  .leaflet-popup-content-wrapper {
+    background: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+  }
+  
+  .leaflet-popup-tip {
+    background: hsl(var(--card));
+  }
+  
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+@layer utilities {
+  .gradient-forest {
+    background: var(--gradient-forest);
+  }
+  
+  .gradient-earth {
+    background: var(--gradient-earth);
+  }
+  
+  .gradient-sky {
+    background: var(--gradient-sky);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-map {
+    box-shadow: var(--shadow-map);
+  }
+  
+  .shadow-elevation {
+    box-shadow: var(--shadow-elevation);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}

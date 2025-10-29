@@ -1,0 +1,85 @@
+{
+  "common": {
+    "search": "ଖୋଜ",
+    "submit": "ଦାଖଲ କର",
+    "reset": "ରିସେଟ୍",
+    "select": "ବାଛ",
+    "village": "ଗାଁ",
+    "district": "ଜିଲ୍ଲା",
+    "state": "ରାଜ୍ୟ",
+    "tehsil": "ତହସିଲ୍",
+    "yes": "ହଁ",
+    "no": "ନା",
+    "home": "ମୁଖ୍ୟ ପୃଷ୍ଠା",
+    "back": "ପଛକୁ",
+    "next": "ପରବର୍ତ୍ତୀ",
+    "loading": "ଲୋଡ୍ ହେଉଛି...",
+    "error": "ତ୍ରୁଟି",
+    "success": "ସଫଳତା"
+  },
+  "header": {
+    "title": "ବନ ଅଧିକାର ରେକର୍ଡ",
+    "subtitle": "ଭାରତ ସରକାର, ଜନଜାତି କାର୍ଯ୍ୟ ମନ୍ତ୍ରଣାଳୟ",
+    "tagline": "ବନ ଅଧିକାର ୭/୧ୂ, ପାଟ୍ଟା ଓ ଦାବି ଦେଖନ୍ତୁ"
+  },
+  "landing": {
+    "mainTitle": "FRA Atlas (ବନ ଅଧିକାର ଅଧିନିୟମ ଆଟଲାସ୍)",
+    "subtitle": "ବନ ଅଧିକାର ଅଧିନିୟମ କାର୍ଯ୍ୟକାରିତା ମନିଟରିଂ ପାଇଁ ଏକ ବ୍ୟାପକ WebGIS ନିଷ୍ପତ୍ତି ସହାୟତା ବ୍ୟବସ୍ଥା",
+    "stateWiseTitle": "ରାଜ୍ୟ ଅନୁସାରେ ବନ ଅଧିକାର କ୍ଷେତ୍ର",
+    "recordTypeTitle": "ଅଧିକାର ରେକର୍ଡର ପ୍ରକାର ବାଛନ୍ତୁ",
+    "detailsTitle": "ବନ ଅଧିକାର ବିବରଣୀ",
+    "totalVillages": "ମୋଟ ଗାଁ",
+    "approvedPattas": "ଅନୁମୋଦିତ ପାଟ୍ଟା",
+    "knowPropertyUID": "ଆପଣ ଆପଣଙ୍କର ୧୧ ଅଙ୍କ ସମ୍ପତ୍ତି UID ନମ୍ବର ଜାଣନ୍ତି କି?",
+    "captcha": "କ୍ୟାପଚା",
+    "enterCaptcha": "କ୍ୟାପଚା ପ୍ରବେଶ କରନ୍ତୁ",
+    "surveyNumber": "ସର୍ଭେ ନମ୍ବର",
+    "mobile": "ମୋବାଇଲ୍",
+    "openAtlas": "ଆଟଲାସ୍ ଖୋଲନ୍ତୁ"
+  },
+  "atlas": {
+    "title": "FRA ଆଟଲାସ୍",
+    "subtitle": "ଇଣ୍ଟରଆକ୍ଟିଭ୍ WebGIS ନିଷ୍ପତ୍ତି ସହାୟତା ବ୍ୟବସ୍ଥା",
+    "liveData": "ଲାଇଭ୍ ଡାଟା",
+    "export": "ରପ୍ତାନି",
+    "backToHome": "ମୁଖ୍ୟ ପୃଷ୍ଠାକୁ ଫେରନ୍ତୁ",
+    "viewSampleVillage": "ନମୁନା ଗାଁ ଦେଖନ୍ତୁ",
+    "viewDSS": "DSS ସୁପାରିଶ ଦେଖନ୍ତୁ",
+    "returnHome": "ମୁଖ୍ୟ ପୃଷ୍ଠାକୁ ଫେରନ୍ତୁ",
+    "loadingMessage": "ଇଣ୍ଟରଆକ୍ଟିଭ୍ ମାନଚିତ୍ର ପ୍ରସ୍ତୁତ କରାଯାଉଛି। ରେଣ୍ଡର ସମସ୍ୟାର ଡିବଗ୍ ପାଇଁ ଏହା ଏକ ସରଳୀକୃତ ସଂସ୍କରଣ।"
+  },
+  "village": {
+    "backToAtlas": "ଆଟଲାସ୍‌କୁ ଫେରନ୍ତୁ",
+    "population": "ଜନସଂଖ୍ୟା",
+    "pattasGranted": "ମଞ୍ଜୁର ପାଟ୍ଟା",
+    "totalArea": "ମୋଟ କ୍ଷେତ୍ରଫଳ (ହେକ୍ଟର)",
+    "pendingClaims": "ବିଚାରାଧୀନ ଦାବି",
+    "overview": "ସମୀକ୍ଷା",
+    "dssRecommendations": "DSS ସୁପାରିଶ",
+    "pattasAndClaims": "ପାଟ୍ଟା ଏବଂ ଦାବି",
+    "monitoring": "ମନିଟରିଂ",
+    "villageDetails": "ଗାଁର ବିବରଣୀ",
+    "households": "ପରିବାର",
+    "tribalGroup": "ଜନଜାତି ଗୋଷ୍ଠୀ",
+    "cfrArea": "CFR କ୍ଷେତ୍ର",
+    "ifrArea": "IFR କ୍ଷେତ୍ର",
+    "recentActivity": "ସାମ୍ପ୍ରତିକ କାର୍ଯ୍ୟକଳାପ",
+    "viewOnMap": "ମାନଚିତ୍ରରେ ଦେଖନ୍ତୁ"
+  },
+  "records": {
+    "ifr": "ବ୍ୟକ୍ତିଗତ ବନ ଅଧିକାର (IFR)",
+    "cfr": "ସାମୁଦାୟିକ ବନ ଅଧିକାର (CFR)",
+    "patta": "ପାଟ୍ଟା ରେକର୍ଡ",
+    "claims": "ଦାବିର ସ୍ଥିତି"
+  },
+  "states": {
+    "mp": "ମଧ୍ୟ ପ୍ରଦେଶ",
+    "odisha": "ଓଡ଼ିଶା",
+    "telangana": "ତେଲେଙ୍ଗାନା",
+    "tripura": "ତ୍ରିପୁରା"
+  },
+  "footer": {
+    "developedUnder": "ବନ ଅଧିକାର ଅଧିନିୟମ ୨୦୦୬ ଅଧୀନରେ ବିକଶିତ",
+    "governmentCredits": "ଭାରତ ସରକାର, ଜନଜାତି କାର୍ଯ୍ୟ ମନ୍ତ୍ରଣାଳୟ"
+  }
+}

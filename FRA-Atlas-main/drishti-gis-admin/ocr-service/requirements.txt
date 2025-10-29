@@ -1,0 +1,26 @@
+# FastAPI and ASGI server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Image processing
+Pillow==10.1.0
+
+# OCR and NLP
+pytesseract==0.3.10
+spacy==3.7.2
+
+# Additional utilities
+python-multipart==0.0.6
+python-jose[cryptography]==3.3.0
+
+# Optional: For PDF support (uncomment if needed)
+# pymupdf==1.23.0
+# pdf2image==1.16.3
+
+# Optional: For advanced image preprocessing
+# opencv-python==4.8.1.78
+# scikit-image==0.22.0
+
+# Development dependencies (optional)
+# pytest==7.4.3
+# pytest-asyncio==0.21.1

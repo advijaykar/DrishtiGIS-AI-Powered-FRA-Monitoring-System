@@ -1,0 +1,196 @@
+version: '3.8'
+
+services:
+  # PostgreSQL with PostGIS extension
+  postgres:
+    image: postgis/postgis:14-3.3
+    container_name: drishti-postgres
+    environment:
+      POSTGRES_DB: drishti
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend/src/db/init_postgis.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - drishti-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # MongoDB for IoT and time-series data
+  mongo:
+    image: mongo:6
+    container_name: drishti-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodata:/data/db
+    networks:
+      - drishti-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Mosquitto MQTT Broker
+  mosquitto:
+    image: eclipse-mosquitto:2.0
+    container_name: drishti-mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    networks:
+      - drishti-network
+    healthcheck:
+      test: ["CMD-SHELL", "mosquitto_sub -h localhost -t '$SYS/broker/uptime' -C 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Redis for caching and session management
+  redis:
+    image: redis:7-alpine
+    container_name: drishti-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redisdata:/data
+    networks:
+      - drishti-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  # Backend API Server
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: drishti-backend
+    environment:
+      NODE_ENV: development
+      PORT: 4000
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/drishti
+      MONGO_URL: mongodb://mongo:27017/drishti
+      REDIS_URL: redis://redis:6379
+      OCR_SERVICE_URL: http://ocr-service:8000
+      MQTT_URL: mqtt://mosquitto:1883
+      JWT_SECRET: your-super-secret-jwt-key-change-in-production
+    ports:
+      - "4000:4000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      mongo:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - drishti-network
+    volumes:
+      - ./backend/uploads:/app/uploads
+    restart: unless-stopped
+
+  # OCR and NER Microservice
+  ocr-service:
+    build:
+      context: ./ocr-service
+      dockerfile: Dockerfile
+    container_name: drishti-ocr
+    environment:
+      PORT: 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ocr-service/models:/app/models
+      - ./ocr-service/temp:/app/temp
+    networks:
+      - drishti-network
+    restart: unless-stopped
+
+  # MQTT Consumer Service
+  mqtt-consumer:
+    build:
+      context: ./mqtt-consumer
+      dockerfile: Dockerfile
+    container_name: drishti-mqtt-consumer
+    environment:
+      MONGO_URL: mongodb://mongo:27017/drishti
+      MQTT_URL: mqtt://mosquitto:1883
+    depends_on:
+      mongo:
+        condition: service_healthy
+      mosquitto:
+        condition: service_healthy
+    networks:
+      - drishti-network
+    restart: unless-stopped
+
+  # Admin Frontend
+  admin-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: drishti-admin-frontend
+    ports:
+      - "3001:80"
+    depends_on:
+      - backend
+    networks:
+      - drishti-network
+    restart: unless-stopped
+
+  # User Frontend (external reference)
+  user-frontend:
+    build:
+      context: ../drishti-gis-user
+      dockerfile: Dockerfile
+    container_name: drishti-user-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - drishti-network
+    restart: unless-stopped
+
+  # Nginx Reverse Proxy (optional)
+  nginx:
+    image: nginx:alpine
+    container_name: drishti-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ssl:/etc/nginx/ssl
+    depends_on:
+      - backend
+      - admin-frontend
+      - user-frontend
+    networks:
+      - drishti-network
+    restart: unless-stopped
+
+networks:
+  drishti-network:
+    driver: bridge
+
+volumes:
+  pgdata:
+    driver: local
+  mongodata:
+    driver: local
+  redisdata:
+    driver: local

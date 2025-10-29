@@ -1,0 +1,85 @@
+{
+  "common": {
+    "search": "অনুসন্ধান",
+    "submit": "জমা দিন",
+    "reset": "রিসেট",
+    "select": "নির্বাচন করুন",
+    "village": "গ্রাম",
+    "district": "জেলা",
+    "state": "রাজ্য",
+    "tehsil": "তহসিল",
+    "yes": "হ্যাঁ",
+    "no": "না",
+    "home": "মূল পাতা",
+    "back": "পিছনে",
+    "next": "পরবর্তী",
+    "loading": "লোড হচ্ছে...",
+    "error": "ত্রুটি",
+    "success": "সফলতা"
+  },
+  "header": {
+    "title": "বন অধিকার রেকর্ড",
+    "subtitle": "ভারত সরকার, উপজাতীয় বিষয়ক মন্ত্রণালয়",
+    "tagline": "বন অধিকার ৭/১২, পাট্টা ও দাবি দেখুন"
+  },
+  "landing": {
+    "mainTitle": "FRA Atlas (বন অধিকার আইন অ্যাটলাস)",
+    "subtitle": "বন অধিকার আইন বাস্তবায়ন পর্যবেক্ষণের জন্য একটি ব্যাপক WebGIS সিদ্ধান্ত সহায়তা ব্যবস্থা",
+    "stateWiseTitle": "রাজ্য অনুযায়ী বন অধিকার এলাকা",
+    "recordTypeTitle": "অধিকার রেকর্ডের ধরন নির্বাচন করুন",
+    "detailsTitle": "বন অধিকারের বিবরণ",
+    "totalVillages": "মোট গ্রাম",
+    "approvedPattas": "অনুমোদিত পাট্টা",
+    "knowPropertyUID": "আপনি কি আপনার ১১ সংখ্যার সম্পত্তি UID নম্বর জানেন?",
+    "captcha": "ক্যাপচা",
+    "enterCaptcha": "ক্যাপচা প্রবেশ করান",
+    "surveyNumber": "সার্ভে নম্বর",
+    "mobile": "মোবাইল",
+    "openAtlas": "অ্যাটলাস খুলুন"
+  },
+  "atlas": {
+    "title": "FRA অ্যাটলাস",
+    "subtitle": "ইন্টারঅ্যাক্টিভ WebGIS সিদ্ধান্ত সহায়তা ব্যবস্থা",
+    "liveData": "লাইভ ডেটা",
+    "export": "রপ্তানি",
+    "backToHome": "মূল পাতায় ফিরে যান",
+    "viewSampleVillage": "নমুনা গ্রাম দেখুন",
+    "viewDSS": "DSS সুপারিশ দেখুন",
+    "returnHome": "মূল পাতায় ফিরে যান",
+    "loadingMessage": "ইন্টারঅ্যাক্টিভ মানচিত্র প্রস্তুত করা হচ্ছে। রেন্ডার সমস্যা ডিবাগ করার জন্য এটি একটি সরলীকৃত সংস্করণ।"
+  },
+  "village": {
+    "backToAtlas": "অ্যাটলাসে ফিরে যান",
+    "population": "জনসংখ্যা",
+    "pattasGranted": "মঞ্জুরকৃত পাট্টা",
+    "totalArea": "মোট এলাকা (হেক্টর)",
+    "pendingClaims": "অপেক্ষমাণ দাবি",
+    "overview": "সংক্ষিপ্ত বিবরণ",
+    "dssRecommendations": "DSS সুপারিশ",
+    "pattasAndClaims": "পাট্টা ও দাবি",
+    "monitoring": "পর্যবেক্ষণ",
+    "villageDetails": "গ্রামের বিবরণ",
+    "households": "পরিবার",
+    "tribalGroup": "উপজাতীয় গোষ্ঠী",
+    "cfrArea": "CFR এলাকা",
+    "ifrArea": "IFR এলাকা",
+    "recentActivity": "সাম্প্রতিক কার্যকলাপ",
+    "viewOnMap": "মানচিত্রে দেখুন"
+  },
+  "records": {
+    "ifr": "ব্যক্তিগত বন অধিকার (IFR)",
+    "cfr": "সামুদায়িক বন অধিকার (CFR)",
+    "patta": "পাট্টা রেকর্ড",
+    "claims": "দাবির অবস্থা"
+  },
+  "states": {
+    "mp": "মধ্য প্রদেশ",
+    "odisha": "ওড়িশা",
+    "telangana": "তেলেঙ্গানা",
+    "tripura": "ত্রিপুরা"
+  },
+  "footer": {
+    "developedUnder": "বন অধিকার আইন ২০০৬ এর অধীনে উন্নত",
+    "governmentCredits": "ভারত সরকার, উপজাতীয় বিষয়ক মন্ত্রণালয়"
+  }
+}

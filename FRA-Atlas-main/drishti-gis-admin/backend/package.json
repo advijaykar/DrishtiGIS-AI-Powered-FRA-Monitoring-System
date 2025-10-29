@@ -1,0 +1,57 @@
+{
+  "name": "drishti-gis-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Drishti-GIS Admin Portal",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest",
+    "seed": "node src/db/seed.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "body-parser": "^1.20.2",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.11.0",
+    "mongoose": "^7.3.0",
+    "redis": "^4.6.0",
+    "mqtt": "^5.0.0",
+    "axios": "^1.4.0",
+    "jsonwebtoken": "^9.0.0",
+    "bcryptjs": "^2.4.3",
+    "joi": "^17.9.0",
+    "dotenv": "^16.1.0",
+    "winston": "^3.9.0",
+    "compression": "^1.7.4",
+    "rate-limiter-flexible": "^2.4.2",
+    "express-validator": "^7.0.1",
+    "moment": "^2.29.4",
+    "uuid": "^9.0.0",
+    "sharp": "^0.32.0",
+    "archiver": "^5.3.1",
+    "csv-writer": "^1.6.0",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "jest": "^29.5.0",
+    "supertest": "^6.3.0",
+    "@types/jest": "^29.5.0"
+  },
+  "keywords": [
+    "forest-rights",
+    "gis",
+    "nodejs",
+    "postgis",
+    "mongodb",
+    "iot"
+  ],
+  "author": "Drishti-GIS Team",
+  "license": "MIT"
+}
