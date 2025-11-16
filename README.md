@@ -1,91 +1,48 @@
-# FRA Atlas Project
+<<<<<<< HEAD
+# DrishtiGIS AI Powered FRA Monitoring System
 
-Welcome to the **FRA Atlas** repository! This project provides tools, modules, and utilities to work with the FRA (Forest Resource Assessment) dataset, offering analysis, visualization, and processing features for researchers and developers.
+Modern, end-to-end platform for monitoring Forest Rights Act (FRA) activities. The project bundles multiple web clients, services, and infrastructure tooling to support data collection, analytics, and public reporting.
 
-## 📌 Overview
+## Overview
 
-The FRA Atlas project aims to simplify working with forest-related datasets by providing:
+- **Tech stack**: React 18 + Vite + TypeScript, TailwindCSS, Supabase, Node.js services, Python OCR microservice, MQTT consumer.
+- **Goal**: deliver a unified dashboard for administrators, field users, and community stakeholders with AI-assisted tooling for claims, mapping, and decision support.
 
-* Data preprocessing utilities
-* Analysis scripts
-* Visualization tools
-* Modular and extensible Java codebase
+## Key Packages
 
-## 🚀 Features
+- `FRA-Atlas-main/` – main monorepo containing:
+	- `src/` – primary React SPA for the Atlas dashboard and AI tooling.
+	- `drishti-gis-admin/` – admin portal (Node/Express backend, OCR service, MQTT consumer).
+	- `drishti-gis-user/` – lightweight citizen-facing client.
+	- `supabase/` – database configuration and SQL migrations.
+- `.github/workflows/` – CI/CD pipelines (e.g., GitHub Pages deployment).
 
-* Clean and modular Java architecture
-* Support for large forest-resource datasets
-* Utility functions for parsing, filtering, and transforming data
-* Integration-ready design for dashboards and analytics tools
-
-## 📁 Project Structure
-
-```
-fra-atlas/
-│
-├── src/main/java/
-│   ├── core/          # Core logic and data models
-│   ├── utils/         # Utility classes
-│   ├── services/      # Processing and analysis modules
-│   └── …
-│
-├── src/test/java/     # Unit tests
-│
-├── data/              # Sample datasets (if applicable)
-│
-├── README.md          # Project documentation
-└── pom.xml            # Maven project file
-```
-
-## 🛠️ Requirements
-
-* **Java 17+**
-* Maven / Gradle (depending on build choice)
-* Recommended: IntelliJ IDEA / VS Code
-
-## 📦 Installation
+## Getting Started
 
 ```bash
-git clone https://github.com/yourusername/fra-atlas.git
-cd fra-atlas
-mvn clean install
+git clone https://github.com/gunjan-creates/DrishtiGIS-AI-Powered-FRA-Monitoring-System.git
+cd DrishtiGIS-AI-Powered-FRA-Monitoring-System/FRA-Atlas-main
+npm install
+npm run dev
 ```
 
-## ▶️ Running the Project
+The dev server defaults to `http://localhost:8080`.
+
+## Build & Deploy
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.fraatlas.Main"
+npm run build
 ```
 
-(Replace with your actual main class.)
+Artifacts land in `FRA-Atlas-main/dist`. GitHub Pages deployment is automated via `.github/workflows/deploy.yml`.
 
-## 🧪 Running Tests
+## Contributing
 
-```bash
-mvn test
-```
+1. Fork the repository and clone locally.
+2. Create a branch for your feature/fix.
+3. Run formatting and linting (`npm run lint`).
+4. Open a pull request describing the change.
 
-## 📚 Documentation
+## License
 
-Full documentation will be added soon. For now, refer to inline comments and module overviews.
-
-## 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repo
-2. Create a new branch
-3. Commit changes
-4. Open a pull request
-
-## 📝 License
-
-This project is licensed under the **MIT License**.
-
-## 💬 Contact
-
-For questions or suggestions, open an issue or reach out via the discussion board.
-
----
-
-**FRA Atlas** — Building smarter tools for forest resource data.
+Distributed under the MIT License. See `LICENSE` for details.
